@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Placeholder Images</title>
+</head>
+<body>
+    <canvas id="logoCanvas" width="70" height="50"></canvas>
+    <canvas id="welcomeCanvas" width="800" height="400"></canvas>
+    <canvas id="aboutCanvas" width="400" height="400"></canvas>
+    <script>
+        // Function to draw text on canvas
+        function drawText(canvas, text, size) {
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#008cff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#ffffff';
+            ctx.font = `${size}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(text, canvas.width/2, canvas.height/2);
+        }
+
+        // Draw on canvases
+        drawText(document.getElementById('logoCanvas'), 'AT', 20);
+        drawText(document.getElementById('welcomeCanvas'), 'Welcome', 40);
+        drawText(document.getElementById('aboutCanvas'), 'About', 40);
+
+        // Function to download canvas as image
+        function downloadCanvas(canvas, filename) {
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+
+        // Download all images
+        downloadCanvas(document.getElementById('logoCanvas'), 'at2.png');
+        downloadCanvas(document.getElementById('welcomeCanvas'), 'dera.png');
+        downloadCanvas(document.getElementById('aboutCanvas'), 'ajaya2.jpg');
+    </script>
+</body>
+</html> 
