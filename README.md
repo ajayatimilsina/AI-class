@@ -47,4 +47,4 @@ A modern, responsive personal portfolio website showcasing my work, experience, 
 
 ## License
 
-This project is open source and available under the MIT License. 
+This project is open source and available under the MIT License. # personal-website
